@@ -26,7 +26,7 @@ def validate_license_number(license_number: str) -> str:
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
-        fields = UserCreationForm.Meta.fields + ("license_number", )
+        fields = ("username", "password1", "password2", "license_number")
 
     def clean_license_number(self):
         license_number = self.cleaned_data["license_number"]
